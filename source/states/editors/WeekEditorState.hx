@@ -504,8 +504,6 @@ class WeekEditorState extends MusicBeatState implements PsychUIEventHandler.Psyc
 		{
 			#if mobile
 			unsavedProgress = false;
-			StorageUtil.saveContent('$weekFileName.json', data);
-			#else
 			_file = new FileReference();
 			_file.addEventListener(#if desktop Event.SELECT #else Event.COMPLETE #end, onSaveComplete);
 			_file.addEventListener(Event.CANCEL, onSaveCancel);
