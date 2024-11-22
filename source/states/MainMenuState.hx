@@ -310,7 +310,6 @@ class MainMenuState extends MusicBeatState
 						FlxTween.tween(memb, {alpha: 0}, 0.4, {ease: FlxEase.quadOut});
 					}
 				}
-				else if (optionShit[curSelected] == 'donate')
 			}
 			else if (controls.justPressed('debug_1') || touchPad.buttonE.justPressed)
 			{
