@@ -291,29 +291,17 @@ class MainMenuState extends MusicBeatState
 								MusicBeatState.switchState(new StoryMenuState());
 							case 'freeplay':
 								MusicBeatState.switchState(new FreeplayState());
-
-							#if MODS_ALLOWED
-							case 'mods':
-								MusicBeatState.switchState(new ModsMenuState());
-							#end
-
-							#if ACHIEVEMENTS_ALLOWED
-							case 'achievements':
+							case 'awards':
 								MusicBeatState.switchState(new AchievementsMenuState());
-							#end
-
 							case 'credits':
 								MusicBeatState.switchState(new CreditsState());
 							case 'options':
 								MusicBeatState.switchState(new OptionsState());
-								OptionsState.onPlayState = false;
-								if (PlayState.SONG != null)
-								{
-									PlayState.SONG.arrowSkin = null;
-									PlayState.SONG.splashSkin = null;
-									PlayState.stageUI = 'normal';
-								}
 						}
+					if (optionShit[curSelected] == 'donate')
+				        {		
+					        CoolUtil.browserLoad('https://ninja-muffin24.itch.io/funkin');
+				        } 
 					});
 					
 					for (memb in menuItems)
@@ -324,7 +312,7 @@ class MainMenuState extends MusicBeatState
 						FlxTween.tween(memb, {alpha: 0}, 0.4, {ease: FlxEase.quadOut});
 					}
 				}
-				else CoolUtil.browserLoad('https://ninja-muffin24.itch.io/funkin');
+				else if (optionShit[curSelected] == 'donate')
 			}
 			else if (controls.justPressed('debug_1') || touchPad.buttonE.justPressed)
 			{
