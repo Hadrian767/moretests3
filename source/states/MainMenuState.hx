@@ -297,11 +297,9 @@ class MainMenuState extends MusicBeatState
 								MusicBeatState.switchState(new CreditsState());
 							case 'options':
 								MusicBeatState.switchState(new OptionsState());
+						        case 'donate':
+								CoolUtil.browserLoad('https://ninja-muffin24.itch.io/funkin');
 						}
-					if (optionShit[curSelected] == 'donate')
-				        {		
-					        CoolUtil.browserLoad('https://ninja-muffin24.itch.io/funkin');
-				        } 
 					});
 					
 					for (memb in menuItems)
