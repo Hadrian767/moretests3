@@ -91,12 +91,6 @@ class MobileOptionsSubState extends BaseOptionsMenu
 			BOOL);
 		addOption(option);
 
-		#if android
-		option = new Option('Storage Type', 'Which folder Psych Engine should use?\n(CHANGING THIS MAKES DELETE YOUR OLD FOLDER!!)', 'storageType', STRING,
-			storageTypes);
-		addOption(option);
-		#end
-
 		super();
 	}
 
@@ -117,15 +111,5 @@ class MobileOptionsSubState extends BaseOptionsMenu
 	#end
 
 	override public function destroy()
-	{
 		super.destroy();
-		#if android
-		if (ClientPrefs.data.storageType != lastStorageType)
-		{
-			onStorageChange();
-			CoolUtil.showPopUp('Storage Type has been changed and you needed restart the game!!\nPress OK to close the game.', 'Notice!');
-			lime.system.System.exit(0);
-		}
-		#end
-	}
 }
